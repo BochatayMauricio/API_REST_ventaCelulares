@@ -14,7 +14,7 @@ import { Publication } from './publication';
 import { Sales } from './sales';
 import { Shipping } from './shipping';
 import { PORT } from '../config'; 
-
+const path = require('path');
 class Server {
   private app: express.Application;
   private port: string;
@@ -47,8 +47,9 @@ class Server {
   midlewares() {
     // Parseo Body
     this.app.use(express.json());
+    this.app.use(express.static("frontend"));
     this.app.use(cors());
-    const path = require('path')
+
     this.app.use('/static', express.static(path.join(__dirname, '../../../frontend/src/assets/Products')))
   }
 

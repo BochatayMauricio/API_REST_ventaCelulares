@@ -27,10 +27,12 @@ const domicile_1 = require("./domicile");
 const publication_1 = require("./publication");
 const sales_2 = require("./sales");
 const shipping_1 = require("./shipping");
+const config_1 = require("../config");
+const path = require('path');
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
-        this.port = process.env.PORT || '3306';
+        this.port = config_1.PORT;
         this.listen();
         this.midlewares();
         this.routes();
@@ -53,8 +55,8 @@ class Server {
     midlewares() {
         // Parseo Body
         this.app.use(express_1.default.json());
+        this.app.use(express_1.default.static("frontend"));
         this.app.use((0, cors_1.default)());
-        const path = require('path');
         this.app.use('/static', express_1.default.static(path.join(__dirname, '../../../frontend/src/assets/Products')));
     }
     dbConnect() {

@@ -1,4 +1,4 @@
-export const PORT = process.env.PORT || '3306'
+export const PORT = process.env.PORT || '3001'
 export const SECRET_KEY = '0Nx01@UVD9H$'
 export const DB_NAME = process.env.DB_NAME || 'rrhh' 
 export const DB_HOST =  process.env.DB_HOST || 'localhost'
