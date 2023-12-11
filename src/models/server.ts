@@ -62,7 +62,9 @@ class Server {
       await Publication.sync();
       await Sales.sync();
     } catch (error) {
+
       console.log('Unable to connect to the database: ', error);
+      
     }
   }
 
