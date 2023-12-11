@@ -47,7 +47,6 @@ class Server {
   midlewares() {
     // Parseo Body
     this.app.use(express.json());
-    this.app.use(express.static("frontend"));
     this.app.use(cors());
 
     this.app.use('/static', express.static(path.join(__dirname, '../../../frontend/src/assets/Products')))
