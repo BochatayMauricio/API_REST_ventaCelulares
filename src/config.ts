@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 
 export const PORT = process.env.PORT || '3001'
 export const SECRET_KEY = '0Nx01@UVD9H$'
