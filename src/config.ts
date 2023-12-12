@@ -1,5 +1,4 @@
-import {config} from 'dotenv'
-config();
+
 export const PORT = process.env.PORT || '3001'
 export const SECRET_KEY = '0Nx01@UVD9H$'
 export const DB_NAME = process.env.DB_NAME || 'rrhh'
