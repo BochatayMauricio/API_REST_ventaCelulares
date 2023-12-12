@@ -1,11 +1,11 @@
 import { Sequelize } from 'sequelize';
-import { DB_HOST,DB_NAME,DB_PASSWORD,DB_USER,DB_URL } from '../config';
+import { DB_HOST,DB_NAME,DB_PASSWORD,DB_PORT,DB_USER } from '../config';
 
 
-const sequelize = new Sequelize(DB_URL, {
-  password: DB_PASSWORD,
-  username: DB_USER,
-  host:DB_HOST
+const sequelize = new Sequelize(DB_NAME,DB_USER,DB_PASSWORD, {
+  host: DB_HOST,
+  dialect:'mysql',
+  port: Number(DB_PORT)
 })
 
 async function testConection() {
